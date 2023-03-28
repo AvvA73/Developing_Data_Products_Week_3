@@ -1,0 +1,29 @@
+---
+title: "Week3_Assignment"
+author: "Stefano Valbonesi"
+date: "2023-03-28"
+output:
+  slidy_presentation: default
+  powerpoint_presentation: default
+  ioslides_presentation: default
+---
+
+## Overview
+
+> I must create a web page presentation using R Markdown that features a plot created with Plotly. I have to host my webpage on either GitHub Pages, RPubs, or NeoCities. My webpage must contain the creation date and it must contain a plot created with Plotly. 
+
+## Creation date
+
+```{r}
+Sys.Date()
+```
+
+## Loading the plotly library, data and make a plot
+
+```{r}
+library(plotly)
+data(iris)
+plot_ly(iris, y=iris$Petal.Length, color=iris$Species, type="box")%>%
+  layout(title="BOXPLOT - Petal length vs Species")
+
+```
